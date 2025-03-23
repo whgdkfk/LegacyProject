@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index.jsp</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="WEB-INF/views/main_page.jsp"></jsp:forward>
+
+	<h1>하이하이</h1>
+
 </body>
 </html>
