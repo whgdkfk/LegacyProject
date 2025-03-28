@@ -31,4 +31,20 @@
 		 WHERE
 		 		MEMBER_ID = #{ memberId }
 	</select>
+	
+	<!-- 회원가입용 -->
+	<insert id="signUp"
+			parameterType="memberDTO">
+		INSERT	
+		  INTO
+		  		KH_MEMBER
+		VALUES
+			  (
+				#{ memberId }
+			  , #{ memberPw }
+			  , #{ memberName }
+			  , #{ email }
+			  , SYSDATE 
+			  )
+	</insert>
 </mapper>

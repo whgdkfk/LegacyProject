@@ -36,7 +36,7 @@
 	<div id="header">
 	<div id="header_1">
             <div id="header_1_left">
-                <img src="instagram.jpeg" alt="">
+                <img src="" alt="">
             </div>
             <div id="header_1_center"></div>
             <div id="header_1_right">

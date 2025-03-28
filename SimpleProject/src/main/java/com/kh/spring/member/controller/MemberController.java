@@ -22,11 +22,12 @@ public class MemberController {
 	private final MemberService memberService;
 	
 	@PostMapping("login")
-	public ModelAndView login(MemberDTO member,
+	public ModelAndView login(MemberDTO member, 
 							  HttpSession session,
 							  ModelAndView mv) {
 		
 		MemberDTO loginMember = memberService.login(member);
+		
 		if(loginMember != null) {
 			session.setAttribute("loginMember", loginMember);
 			mv.setViewName("redirect:/");
@@ -34,7 +35,27 @@ public class MemberController {
 			mv.addObject("message", "로그인 실패")
 			  .setViewName("include/error_page");
 		}
+		return mv;
+	}
+	
+	@GetMapping("logout")
+	public ModelAndView logout(HttpSession session,
+							   ModelAndView mv) {
+		session.removeAttribute("loginMember");
+		mv.setViewName("redirect:/");
 		
 		return mv;
 	}
+	
+	@GetMapping("signup-form")
+	public String signupForm() {
+		
+		return "member/signup-form";
+	}
+	
+	@PostMapping("signup")
+	public void join(MemberDTO member) {
+		log.info("{}", member);
+	}
+	
 }

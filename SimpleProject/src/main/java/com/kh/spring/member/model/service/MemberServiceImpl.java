@@ -26,7 +26,6 @@ public class MemberServiceImpl implements MemberService {
 		
 		validator.validatedLoginMember(member);
 		validator.validateMemberExists(member);
-		
 		MemberDTO loginMember = validator.validateMemberExists(member);
 		if(passwordEncoder.matches(member.getMemberPw(), loginMember.getMemberPw())) {
 			return loginMember;
@@ -49,6 +48,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int delete(MemberDTO member) {
 		return 0;
+	}
+
+	@Override
+	public String idCheck(String memberId) {
+		return null;
 	}
 
 }
